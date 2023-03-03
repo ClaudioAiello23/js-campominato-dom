@@ -39,7 +39,7 @@ function isIncluded(arrayNumbers) {
 }
 
 
-//  FUNZIONE D - DA VERIFICARE
+//  FUNZIONE D - PROVA DA VERIFICARE
 // Funzione per aggiungere una classe
 function addClassHtml(oldClass, newClass) {
     const element = document.querySelector(oldClass).classList.add(newClass);
@@ -53,8 +53,8 @@ ALTRE ISTRUZIONI
 ************************* 
 */
 
-/* Creo un array di cpuNumbers vuoto e lo popolo con 16 numeri casuali
-grazie ad un ciclo while.*/
+/* DA VERIFICARE - Creo un array di cpuNumbers vuoto e lo popolo con 16 numeri casuali
+grazie ad un ciclo while.
 let cpuNumbers = [];
 let createdNum = 0;
 let i = 0;
@@ -63,7 +63,7 @@ while (i < 16) {
     cpuNumbers.push(createdNum);
     console.log(createdNum);
     i++
-}
+}*/
 
 
 
