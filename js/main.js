@@ -26,6 +26,7 @@ function randomNumber() {
     return element;  
 }
 
+
 /* 
 *************************
 ALTRE ISTRUZIONI
@@ -49,7 +50,7 @@ const playButton = createMyElement('button', 'play_button');
 playButton.innerText = 'PLAY';
 buttonContainer.append(playButton);
 
-/*  All'evento del click sul bottone play viene mostrato il container contenente 
+/* All'evento del click sul bottone play viene mostrato il container contenente 
 la grigia e avvio il ciclo FOR per la creazione delle 100 celle, del numero della 
 cella, e l'impostazione sul click sulla cella che fa partire il gioco; in caso di 
 presenza del numero scelto nell'array contenente le bombe, il giocatore perderà; */
@@ -60,12 +61,14 @@ playButton.addEventListener('click', function() {
         cellBox.innerText = [i];
         cellContainer.append(cellBox);
         cellBox.addEventListener('click', function() {
-            console.log(i);
-            if (cpuNumbers.includes(i)){
+            console.log('numero cliccato: ', i);
+            if (cpuNumbers.includes(i)){ /* controllo se numero cliccato è nell'array*/
                 cellBox.classList.add('bomb_cell');
+                alert('hai perso, clicca nuovamente sul tasto PLAY');
 
             } else {
                 cellBox.classList.add('correct_cell');
+                // contatore numero da inserire;
             }
         })   
     }
