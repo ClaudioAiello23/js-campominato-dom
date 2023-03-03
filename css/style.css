@@ -110,8 +110,12 @@ main{
     cursor: pointer;
 }
 
-.lightblue_color{
-    background-color: lightblue;
+.correct_cell{
+    background-color: green;
+}
+
+.bomb_cell{
+    background-color: red;
 }
 
 
