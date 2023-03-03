@@ -1,0 +1,133 @@
+
+/* 
+*************************
+REGOLE DI RESET
+************************* 
+*/
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* 
+*************************
+VARIABLES
+************************* 
+*/
+
+ :root{
+    --header_height: 15%;
+    --footer_height: 10%;
+    --main_border: 1px solid black;
+ }
+
+/* 
+*************************
+REGOLE COMMON
+************************* 
+*/
+
+body{
+    height: 100vh;
+}
+
+/* 
+*************************
+REGOLE HEADER
+************************* 
+*/
+
+header{
+    height: var(--header_height);
+    padding: 0 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.play_button{
+    padding: .3125rem 1.25rem;
+    border-radius: .3125rem;
+    cursor:pointer;
+}
+
+.img_box{
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+.img_box img{
+    max-width: 100%;
+}
+
+header > h1{
+  flex-grow: 1;
+  padding-left: 1.875rem;
+}
+
+
+/* 
+*************************
+REGOLE MAIN
+************************* 
+*/
+
+main{
+    height: calc(100vh - var(--header_height) - var(--footer_height));
+    background-color: #7fffd4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main_container{
+    border: var(--main_border);  /*da rimuovere successivamente */
+    display: none;
+}
+
+.show_main_container{
+    display: block;
+}
+
+.cell_container{
+    width: 70vh;
+    height: 70vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: start;
+
+}
+
+.cell_box{
+    width: calc(70vh/10);
+    height: calc(70vh/10);
+    border: var(--main_border);
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.lightblue_color{
+    background-color: lightblue;
+}
+
+
+/* 
+*************************
+REGOLE FOOTER
+************************* 
+*/
+
+footer{
+    height: var(--footer_height);
+    padding: 1.5625rem 1.25rem;
+   
+}
+
+.fa-heart{
+    font-size: .625rem;
+}
+
