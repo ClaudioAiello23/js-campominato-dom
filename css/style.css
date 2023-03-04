@@ -64,7 +64,11 @@ header{
 
 header > h1{
   flex-grow: 1;
-  padding-left: 1.875rem;
+}
+
+.select_box{
+     padding-right: 1.875rem;
+
 }
 
 
@@ -93,13 +97,26 @@ main{
 }
 
 .cell_box{
-    width: calc(70vh/10);
-    height: calc(70vh/10);
     border: var(--main_border);
     display:flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
+}
+
+.easy{
+    width: calc(70vh/10);
+    height: calc(70vh/10);
+}
+
+.medium{
+    width: calc(70vh/9);
+    height: calc(70vh/9);
+}
+
+.hard{
+    width: calc(70vh/7);
+    height: calc(70vh/7);
 }
 
 .correct_cell{

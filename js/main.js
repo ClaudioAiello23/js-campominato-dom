@@ -39,13 +39,35 @@ function addClass(element, newClass) {
 ALTRE ISTRUZIONI
 ************************* 
 */
+    // aggancio variabili alle classi easy, medium, hard
+//    const easy = document.querySelector('.easy_100');
+//    const medium = document.querySelector('.medium_81');
+//    const hard = document.querySelector('.hard_49');
+const selected = document.querySelector('.selected');
+   
+   let cellLength = 100;
+   
+  switch (true) {
+   case selected.value == 2:
+    cellLength = 81;
+       break;
+  case selected.value == 3:
+    cellLength = 49;
+       break;
+   
+   default:
+    cellLength = 100;
+   
+  }
+
+
 
 /* Creo una variabile di tipo Array vuota che verrà riempita con i 
 valori dei numeri random creati dalla cpu (che rappresentano le bombe)*/
 let cpuNumbers = [];
 
 // Creo una variabile che richiama il contenitore delle celle
-const cellContainer = document.querySelector(".cell_container");
+let cellContainer = document.querySelector(".cell_container");
 
 // Creo una variabile che richiama il contenitore del bottone
 const buttonContainer = document.querySelector(".btn_box");
@@ -57,17 +79,34 @@ const playButton = createMyElement('button', 'play_button');
 playButton.innerText = 'PLAY';
 buttonContainer.append(playButton);
 
+
 /* All'evento del click sul bottone play viene mostrato il container contenente 
 la grigia e avvio il ciclo FOR per la creazione delle 100 celle, del numero della 
 cella, e l'impostazione sul click sulla cella che fa partire il gioco; in caso di 
 presenza del numero scelto nell'array contenente le bombe, il giocatore perderà; */
 let showContainer = document.querySelector('.main_container');
 playButton.addEventListener('click', function() { 
-    
+
     emptyHtml(cellContainer);  //svuota il contenitore celle (FUNZIONE C); le celle vengono appese col ciclo For di volta in volta
     
-    for (let i = 1; i <= 100; i++) {
+    for (let i = 1; i <= cellLength; i++) {
+        
         let cellBox = createMyElement('div', 'cell_box');
+        switch (true) {
+            case selected.value == 2:
+             cellLength = 81;
+             cellBox.classList.add('medium');
+                break;
+           case selected.value == 3:
+             cellLength = 49;
+             cellBox.classList.add('hard');
+                break;
+            
+            default:
+             cellLength = 100;
+             cellBox.classList.add('easy');
+            
+           }
         cellBox.innerText = [i];
         cellContainer.append(cellBox);
         cellBox.addEventListener('click', function() {
@@ -93,15 +132,5 @@ playButton.addEventListener('click', function() {
     }
       
 })
-
-
-
-
-
-
-
-
-
-
 
 
