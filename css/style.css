@@ -82,14 +82,6 @@ main{
     align-items: center;
 }
 
-.main_container{
-    border: var(--main_border);  /*da rimuovere successivamente */
-    display: none;
-}
-
-.show_main_container{
-    display: block;
-}
 
 .cell_container{
     width: 70vh;

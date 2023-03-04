@@ -55,7 +55,10 @@ la grigia e avvio il ciclo FOR per la creazione delle 100 celle, del numero dell
 cella, e l'impostazione sul click sulla cella che fa partire il gioco; in caso di 
 presenza del numero scelto nell'array contenente le bombe, il giocatore perderà; */
 let showContainer = document.querySelector('.main_container');
-playButton.addEventListener('click', function() {   
+playButton.addEventListener('click', function() { 
+    
+    cellContainer.innerHTML ='';  //svuota il contenitore celle prima del ciclo For che appende le nuove celle
+    
     for (let i = 1; i <= 100; i++) {
         let cellBox = createMyElement('div', 'cell_box');
         cellBox.innerText = [i];
@@ -82,7 +85,7 @@ playButton.addEventListener('click', function() {
         i++
     }
 
-    showContainer.classList.add('show_main_container');
+    // showContainer.classList.add('show_main_container');
       
 })
 
