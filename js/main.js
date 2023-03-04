@@ -26,6 +26,13 @@ function randomNumber() {
     return element;  
 }
 
+// FUNZIONE C
+// Resettare/svuotare un elemento html
+function emptyHtml(htmlElement) {
+    htmlElement.innerHTML = '';
+}
+
+
 
 /* 
 *************************
@@ -57,7 +64,7 @@ presenza del numero scelto nell'array contenente le bombe, il giocatore perderà
 let showContainer = document.querySelector('.main_container');
 playButton.addEventListener('click', function() { 
     
-    cellContainer.innerHTML ='';  //svuota il contenitore celle prima del ciclo For che appende le nuove celle
+    emptyHtml(cellContainer);  //svuota il contenitore celle (Function C); le celle vengono appese col ciclo For di volta in volta
     
     for (let i = 1; i <= 100; i++) {
         let cellBox = createMyElement('div', 'cell_box');
@@ -84,11 +91,8 @@ playButton.addEventListener('click', function() {
         console.log(createdNum);
         i++
     }
-
-    // showContainer.classList.add('show_main_container');
       
 })
-
 
 
 
