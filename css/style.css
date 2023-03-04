@@ -63,12 +63,16 @@ header{
 }
 
 header > h1{
-  flex-grow: 1;
+    padding-left: 1.25rem;
+    flex-grow: 1;
+}
+
+header > h3{
+    padding-right: .3125rem;
 }
 
 .select_box{
      padding-right: 1.875rem;
-
 }
 
 
