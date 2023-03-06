@@ -14,12 +14,27 @@ function createMyElement(htmlElement, className) {
 }
 
 
-// FUNZIONE B - Generazione di un numero casuale da 1 a 100
-function randomNumber() {
+// FUNZIONE B1 - Generazione di un numero casuale da 1 a 100
+function randomNumber100() {
 
     let element = Math.floor(Math.random() * 100) + 1;
     return element;  
 }
+
+// FUNZIONE B2 - Generazione di un numero casuale da 1 a 100
+function randomNumber81() {
+
+    let element = Math.floor(Math.random() * 81) + 1;
+    return element;  
+}
+
+// FUNZIONE B3 - Generazione di un numero casuale da 1 a 100
+function randomNumber49() {
+
+    let element = Math.floor(Math.random() * 49) + 1;
+    return element;  
+}
+
 
 
 // FUNZIONE C - Resettare/svuotare un elemento html
@@ -125,12 +140,25 @@ playButton.addEventListener('click', function() {
     let createdNum = 0;
     let i = 0;
     while (i < 16) {
-        createdNum = randomNumber();
+        switch (true) {
+            case cellLength === 81:
+            createdNum = randomNumber81();
+             console.log(createdNum);
+                break;
+           case cellLength === 49:
+            createdNum = randomNumber49();
+            console.log(createdNum);
+                break;
+            
+            default:
+            createdNum = randomNumber100();
+            console.log(createdNum);
+            
+        }
+
         cpuNumbers.push(createdNum);
-        console.log(createdNum);
+      
         i++
     }
       
 })
-
-
