@@ -14,27 +14,12 @@ function createMyElement(htmlElement, className) {
 }
 
 
-// FUNZIONE B1 - Generazione di un numero casuale da 1 a 100
-function randomNumber100() {
+// FUNZIONE B - Generazione di un numero casuale 100/81/49
+function randomNumber(numChoice) {
 
-    let element = Math.floor(Math.random() * 100) + 1;
+    let element = Math.floor(Math.random() * numChoice) + 1;
     return element;  
 }
-
-// FUNZIONE B2 - Generazione di un numero casuale da 1 a 100
-function randomNumber81() {
-
-    let element = Math.floor(Math.random() * 81) + 1;
-    return element;  
-}
-
-// FUNZIONE B3 - Generazione di un numero casuale da 1 a 100
-function randomNumber49() {
-
-    let element = Math.floor(Math.random() * 49) + 1;
-    return element;  
-}
-
 
 
 // FUNZIONE C - Resettare/svuotare un elemento html
@@ -54,27 +39,28 @@ function addClass(element, newClass) {
 ALTRE ISTRUZIONI
 ************************* 
 */
-    // aggancio variabili alle classi easy, medium, hard
-//    const easy = document.querySelector('.easy_100');
-//    const medium = document.querySelector('.medium_81');
-//    const hard = document.querySelector('.hard_49');
+
+/* Creazione variabile Selected per prendere i valori delle opzioni 
+della select Facile, Medio, Difficile*/
 const selected = document.querySelector('.selected');
-   
-   let cellLength = 100;
+
+
+/* Impostata lunghezza cella di default = 100 e create le casistiche
+con le condizioni Switch*/
+let cellLength = 100;
    
   switch (true) {
-   case selected.value == 2:
+    case selected.value == 2:
     cellLength = 81;
        break;
-  case selected.value == 3:
+    case selected.value == 3:
     cellLength = 49;
        break;
    
-   default:
+    default:
     cellLength = 100;
    
   }
-
 
 
 /* Creo una variabile di tipo Array vuota che verrà riempita con i 
@@ -121,43 +107,51 @@ playButton.addEventListener('click', function() {
              cellLength = 100;
              cellBox.classList.add('easy');
             
-           }
+        }
+
         cellBox.innerText = [i];
         cellContainer.append(cellBox);
         cellBox.addEventListener('click', function() {
-            console.log('numero cliccato: ', i);
-            if (cpuNumbers.includes(i)) {      // controllo se numero cliccato è nell'array
+        console.log('numero cliccato: ', i);
+        if (cpuNumbers.includes(i)) {      // controllo se numero cliccato è nell'array
                 addClass(cellBox, 'bomb_cell');   // Utilizzo la FUNZIONE D per aggiungere la classe css
-                alert('hai perso, clicca nuovamente sul tasto PLAY');
+                alert('hai perso, per rigiocare aggiorna il sito e premi nuovamente sul tasto PLAY');
 
             } else {
                 addClass(cellBox, 'correct_cell');  // Utilizzo la FUNZIONE D per aggiungere la classe css
                 // contatore numero da inserire;
-            }
+        }
         })   
     }
 
-    let createdNum = 0;
-    let i = 0;
+
+    
+/* Creazione 16 numeri casuali (le "bombe") con condizione Switch che 
+regola la creazione dei numeri casuali nella cella considerando 16 
+numeri compresi tra 1 e 100, oppure 16 numeri compresi tra 1 e 81, 
+oppure 16 numeri compresi tra 1 e 49 (in base alla scelta utente).
+Utilizzata la Funzione B per la creazione dei numeri casuali*/
+let createdNum = 0;
+let i = 0;
+
     while (i < 16) {
         switch (true) {
             case cellLength === 81:
-            createdNum = randomNumber81();
+            createdNum = randomNumber(81);
              console.log(createdNum);
                 break;
-           case cellLength === 49:
-            createdNum = randomNumber49();
+
+            case cellLength === 49:
+            createdNum = randomNumber(49);
             console.log(createdNum);
                 break;
-            
+
             default:
-            createdNum = randomNumber100();
-            console.log(createdNum);
-            
+            createdNum = randomNumber(100);
+            console.log(createdNum);   
         }
 
         cpuNumbers.push(createdNum);
-      
         i++
     }
       
