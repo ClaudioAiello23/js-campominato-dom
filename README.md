@@ -7,3 +7,10 @@ Al termine della partita il software deve comunicare il punteggio, cioè il nume
 
 ---------------------------------------------------------------
 SVOLGIMENTO - IPOTESI
+
+- impostare la difficoltà FACILE, MEDIO, DIFFICILE con uno switch che richiama il "value" presente nelle opzioni della select (selezione livello a tendina); in caso si scelga l'opzione DIFFICILE, ad esempio, al momento del click sul tasto PLAY verrà creata una griglia da 49 caselle; la divisione delle celle viene impostata sul file CSS.
+- impostare una funzione per la generazione dei numeri casuali; impostato un argomento
+da utilizzare per inserire il numero di celle; in base al numero di celle (100, 81, 49)
+aggiunto un vicolo per le bombe (ad es. vengono create sempre 16 bombe, ma se le celle sono 49 il numero della bomba deve essere compreso tra 1 e 49).
+- impostatr il click sulla cella cellBox; impostare un array che contiene le bombe create casualmente; impostare la condizione che se si clicca su una cella che corrisponde ad un numero presente nell'array delle bombe, la cella si colora di rosso e la partita termina; in caso contrario la partita continua.
+- impostare punteggio contatore in base al numero di celle cliccate prima di trovare una cella bomba.
